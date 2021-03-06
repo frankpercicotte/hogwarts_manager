@@ -1,6 +1,6 @@
-// import { pointHouseThunks } from './store/modules/houses/thunks';
+import { pointHouseThunks } from './store/modules/houses/thunks';
 import { loadStudentsThunks } from './store/modules/students/thunks';
-// import { HandleHouseThunks } from './store/modules/handleScores/thunks'
+import { HandleThunks } from './store/modules/handleScores/thunks'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect, useState } from 'react';
@@ -14,18 +14,9 @@ function App() {
   const dispatch = useDispatch();
   const houses = useSelector((state) => state.houses);
 
-
-  // const _click = useSelector((state) => state.getBool);
-  const _house = useSelector((state) => state.getHouse);
-
-
-  // console.log('handleClick:', _click);
-  console.log('handleHouse:---', _house);
-
   const [ListStudent, setListStudent] = useState(false);
   const [poinstHouses] = useState(houses);
   const [input, setInput] = useState('');
-
 
   const loadListStudents = () => {
     if (!ListStudent) {
@@ -33,19 +24,26 @@ function App() {
       dispatch(loadStudentsThunks());
     }
   }
+
   loadListStudents();
 
   useEffect(() => {
   }, [poinstHouses]);
 
 
-  // const loadPoints = (chosenHouse) => {
-  //   const house = chosenHouse || '';
-  // if (input && house) {
-  // dispatch(pointHouseThunks(house, Number(input)));
-  // setInput('');
-  // }
-  // }
+  const getHouse = useSelector((state) => state.getHouse);
+
+  const loadPoints = (chosenHouse) => {
+    const house = chosenHouse || '';
+    if (input && getHouse) {
+      dispatch(pointHouseThunks(house, Number(input)));
+      setInput('');
+      dispatch(HandleThunks(''));
+    }
+  }
+
+  getHouse && loadPoints(getHouse);
+
 
   const handChange = (e) => {
     setInput(e.target.value);

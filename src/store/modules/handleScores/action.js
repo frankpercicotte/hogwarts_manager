@@ -3,7 +3,7 @@ export const handleChosenHouse = (getHouse) => ({
   getHouse
 });
 
-// export const handleClickHouse = (getBool) => ({
-//   type: '@CLICK/HOUSE',
-//   getBool
-// });
+export const handleClickHouse = (getBool) => ({
+  type: '@CLICK/HOUSE',
+  getBool
+});
