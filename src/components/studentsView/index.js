@@ -8,7 +8,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { HandleThunks } from '../../store/modules/handleScores/thunks'
 
 import annotations from '../../assets/annotations.svg'
 
@@ -35,6 +36,7 @@ const StudentsView = () => {
   const classes = useStyles();
   const students = useSelector((state) => state.students) || [];
 
+  const dispatch = useDispatch();
 
   const createData = () => {
     return (students.map((elm, idx) => {
@@ -48,7 +50,7 @@ const StudentsView = () => {
   const rows = [...createData()]
 
   const showCardPoints = (chosenHouse) => {
-    console.log(chosenHouse);
+    dispatch(HandleThunks(chosenHouse));
   }
 
   return (
@@ -63,12 +65,12 @@ const StudentsView = () => {
         </TableHead>
         <TableBody >
           {rows.map((row) => (
-            <TableRow key={row.name} onClick={() => showCardPoints(row.house)} style={{ cursor: 'pointer' }}>
+            <TableRow key={row.name} >
               <TableCell component="th" scope="row" align="center">
                 {row.name}
               </TableCell>
               <TableCell align="center">{row.house}</TableCell>
-              <TableCell align="center"><img src={row.img} alt='' /></TableCell>
+              <TableCell align="center"><img src={row.img} alt='note' onClick={() => showCardPoints(row.house)} style={{ cursor: 'pointer' }} /></TableCell>
             </TableRow>
           ))}
         </TableBody>

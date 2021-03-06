@@ -1,9 +1,11 @@
 // import { pointHouseThunks } from './store/modules/houses/thunks';
 import { loadStudentsThunks } from './store/modules/students/thunks';
+// import { HandleHouseThunks } from './store/modules/handleScores/thunks'
+
 import { useSelector, useDispatch } from 'react-redux'
-import './App.css';
 import { useEffect, useState } from 'react';
 import StudentsView from './components/studentsView'
+import './App.css';
 
 
 function App() {
@@ -11,7 +13,14 @@ function App() {
 
   const dispatch = useDispatch();
   const houses = useSelector((state) => state.houses);
-  // const students = useSelector((state) => state.students) || [];
+
+
+  // const _click = useSelector((state) => state.getBool);
+  const _house = useSelector((state) => state.getHouse);
+
+
+  // console.log('handleClick:', _click);
+  console.log('handleHouse:---', _house);
 
   const [ListStudent, setListStudent] = useState(false);
   const [poinstHouses] = useState(houses);
@@ -49,20 +58,12 @@ function App() {
         <div>
           <div>Pontuação</div>
           <input type='text' onChange={handChange} value={input} />
-          {/* <button type='submit' onClick={loadHouses}>Load students</button> */}
         </div>
         <div>
           {houses.map((elm, idx) => <div key={idx}> {elm.house} : {elm.points}</div>)}
         </div>
         <hr style={{ width: '60%' }}></hr>
         <StudentsView />
-        {/* <div>
-            {ListStudent &&
-              students.map((elm, idx) =>
-                <div key={idx} onClick={(e) => loadPoints(elm.house)}>
-                  {elm.name} - {elm.house}
-                </div>)}
-          </div> */}
 
       </header>
     </div>

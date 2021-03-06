@@ -7,7 +7,6 @@ const ListStudents = (state = [], action) => {
 
     case '@LIST/STUDENTS':
       const { students } = action;
-      // console.log('students at reducer', students);
       return students;
 
     default:
