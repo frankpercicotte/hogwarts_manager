@@ -50,6 +50,7 @@ const StudentsView = () => {
   const rows = [...createData()]
 
   const showCardPoints = (chosenStudent) => {
+    // console.log('chosen at studentView:', chosenStudent);
     dispatch(HandleThunks(chosenStudent));
   }
 

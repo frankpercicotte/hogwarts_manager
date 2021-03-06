@@ -11,8 +11,8 @@ const combine = combineReducers({
   students,
   houses,
   getStudent,
+});
 
-})
 const store = createStore(combine, applyMiddleware(thunk));
 
 export default store;
