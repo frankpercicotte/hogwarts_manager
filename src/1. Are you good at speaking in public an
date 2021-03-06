@@ -1,0 +1,22 @@
+1. Are you good at speaking in public and transmitting an idea? Why do you think so? 
+2. What do you considerer as the main characteristic for a good orator? 
+3. What type of speech gets you, the one full of feelings or the rational ones? 
+4. A speech is as a story and each person has preferences in what kind they like. 
+What does a story must have for you to you get involved? 
+5. Would you like to speak well in public? Why? 
+6. Communication, people say we are born with this talent, do you agree? Is it possible to learn? How to do so? 
+7. Speaking well in public is an ability very required for companies, during the college and high school. Have you ever lost an opportunity for not full fil this requirement? 
+8. As not all of us were born with this talent, we must learn. During this path, we can struggle and pass through embarrassing situations. Do you have any embarrassing story that you were involved? (Doesn’t need to be with you, but some that you witnessed) 
+9. Why we are so afraid of speaking in public? 
+
+
+const students = useSelector((state) => state.students) || [];
+
+  const createData = () => {
+    const newList = students.map((elm, idx) => {
+      return ({ name: elm.name, house: elm.house, points: idx })
+    });
+    return newList;
+  }
+
+  const rows = [...createData()]
