@@ -1,8 +1,8 @@
-import { handleChosenHouse } from '../handleScores/action'
+import { handleChosen } from '../handleScores/action'
 
-export const HandleThunks = (house) => (dispatch) => {
-  // console.log('handleHouse at thunks:', house);
-  dispatch(handleChosenHouse(house));
+export const HandleThunks = (student) => (dispatch) => {
+  // console.log('handleHouse at thunks:', student);
+  dispatch(handleChosen(student));
 
 };
 

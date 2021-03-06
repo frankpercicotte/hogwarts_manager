@@ -3,14 +3,14 @@ import thunk from 'redux-thunk';
 
 import students from './modules/students/reducer';
 import houses from './modules/houses/reducer';
-import getHouse from './modules/handleScores/reducer';
+import getStudent from './modules/handleScores/reducer';
 
 
 
 const combine = combineReducers({
   students,
   houses,
-  getHouse,
+  getStudent,
 
 })
 const store = createStore(combine, applyMiddleware(thunk));

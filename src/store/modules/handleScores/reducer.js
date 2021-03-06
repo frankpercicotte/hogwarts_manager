@@ -2,10 +2,10 @@ const HandleReducer = (state = '', action) => {
 
   switch (action.type) {
 
-    case '@CHOSEN/HOUSE':
-      const { getHouse } = action;
+    case '@CHOSEN/STUDENT':
+      const { getStudent } = action;
       // console.log('chosen at reducer:', getHouse)
-      return getHouse;
+      return getStudent;
 
     default:
       return state;

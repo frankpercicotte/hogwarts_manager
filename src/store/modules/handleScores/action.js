@@ -1,9 +1,4 @@
-export const handleChosenHouse = (getHouse) => ({
-  type: '@CHOSEN/HOUSE',
-  getHouse
-});
-
-export const handleClickHouse = (getBool) => ({
-  type: '@CLICK/HOUSE',
-  getBool
+export const handleChosen = (getStudent) => ({
+  type: 'CHOSEN@STUDENT',
+  getStudent
 });

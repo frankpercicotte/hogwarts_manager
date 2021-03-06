@@ -49,8 +49,8 @@ const StudentsView = () => {
 
   const rows = [...createData()]
 
-  const showCardPoints = (chosenHouse) => {
-    dispatch(HandleThunks(chosenHouse));
+  const showCardPoints = (chosenStudent) => {
+    dispatch(HandleThunks(chosenStudent));
   }
 
   return (
@@ -70,7 +70,7 @@ const StudentsView = () => {
                 {row.name}
               </TableCell>
               <TableCell align="center">{row.house}</TableCell>
-              <TableCell align="center"><img src={row.img} alt='note' onClick={() => showCardPoints(row.house)} style={{ cursor: 'pointer' }} /></TableCell>
+              <TableCell align="center"><img src={row.img} alt='note' onClick={() => showCardPoints(row.name)} style={{ cursor: 'pointer' }} /></TableCell>
             </TableRow>
           ))}
         </TableBody>
