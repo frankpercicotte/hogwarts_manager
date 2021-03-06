@@ -31,18 +31,22 @@ function App() {
   }, [poinstHouses]);
 
 
-  const getHouse = useSelector((state) => state.getHouse);
+  const getStudent = useSelector((state) => state.getStudent);
+  const students = useSelector((state) => state.students) || [];
 
-  const loadPoints = (chosenHouse) => {
-    const house = chosenHouse || '';
-    if (input && getHouse) {
-      dispatch(pointHouseThunks(house, Number(input)));
+  const loadPoints = (chosenStudent) => {
+
+    const student = students.find((elm) => elm.name === getStudent)
+    console.log(student.house);
+
+    if (input && getStudent) {
+      dispatch(pointHouseThunks(student.house, Number(input)));
       setInput('');
       dispatch(HandleThunks(''));
     }
   }
 
-  getHouse && loadPoints(getHouse);
+  getStudent && loadPoints(getStudent);
 
 
   const handChange = (e) => {
