@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Display from './components/Display';
 import StudentsView from './components/StudentsView';
 import Modal from './components/Modal';
+import logo_geral from './assets/logo_geral.svg'
 import './App.css';
 
 
@@ -34,9 +35,13 @@ function App() {
 
     <div className="App">
       <header className="App-header">
+        <div className='App-ground'>
+          <img src={logo_geral} alt="logo"></img>
+          <h5>Hogwarts Score Manager</h5>
+        </div>
         {getStudent && <Modal />}
         <Display />
-        <hr style={{ width: '80%' }}></hr>
+        <div></div>
         <StudentsView />
 
       </header>

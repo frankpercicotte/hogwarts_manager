@@ -16,23 +16,27 @@ import '../../index.css'
 
 const useStyles = makeStyles({
   root: {
-    padding: 0,
-    margin: 0,
+    padding: '.5% 1%',
+    textAlign: 'left',
     width: '60%',
     minWidth: 300,
-    backgroundColor: '#E5EDF2',
+    border: '2px solid blue',
+    backgroundColor: '#e5edf2',
+
   },
   table: {
-    margin: 0,
-    padding: '0',
+    marginBottom: '.5%',
     width: '100%',
     minWidth: 250,
-    backgroundColor: '#C0CED0'
+    backgroundColor: '#e5edf2'
+  },
+  row: {
+    color: '#5777a8',
   },
   title: {
     fontWeight: 'bold',
-    color: 'purple',
-  }
+    color: '#5777a8',
+  },
 });
 
 
@@ -60,22 +64,23 @@ const StudentsView = () => {
 
   return (
     <TableContainer component={Paper} className={classes.root}>
+      <div className={classes.title}> Alunos</div>
       <Table className={classes.table} size="small" >
         <TableHead className={classes.title}>
           <TableRow>
-            <TableCell align="center">Name</TableCell>
-            <TableCell align="center">House</TableCell>
-            <TableCell align="center"> </TableCell>
+            <TableCell className={classes.title}>Name</TableCell>
+            <TableCell className={classes.title}>House</TableCell>
+            <TableCell className={classes.title}> </TableCell>
           </TableRow>
         </TableHead>
         <TableBody >
           {rows.map((row) => (
             <TableRow key={row.name} >
-              <TableCell component="th" scope="row" align="center">
+              <TableCell component="th" scope="row" className={classes.row}>
                 {row.name}
               </TableCell>
-              <TableCell align="center">{row.house}</TableCell>
-              <TableCell align="center"><img src={row.img} alt='note' onClick={() => showCardPoints(row.name)} style={{ cursor: 'pointer' }} /></TableCell>
+              <TableCell className={classes.row}>{row.house}</TableCell>
+              <TableCell className={classes.row}><img src={row.img} alt='note' onClick={() => showCardPoints(row.name)} style={{ cursor: 'pointer' }} /></TableCell>
             </TableRow>
           ))}
         </TableBody>
