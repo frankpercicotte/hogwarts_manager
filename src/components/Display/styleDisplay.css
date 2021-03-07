@@ -1,0 +1,19 @@
+.displayView {
+  display: flex;
+  justify-content: space-around;
+  width: 85%;
+  font-size: 75%;
+  color: black;
+  /* background-color: #e5edf2; */
+  /* border: 2px solid red; */
+}
+
+.cardsView {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 0 1%;
+  min-width: 15%;
+  /* border: 2px solid purple; */
+  background-color: #e5edf2;
+}

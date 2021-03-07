@@ -2,34 +2,22 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { HandleThunks } from '../../store/modules/handleScores/thunks';
 import { pointHouseThunks } from '../../store/modules/houses/thunks';
-import { DataHouses } from '../../data/DataHouses'
 import './styleModal.css';
 
 
 const Modal = () => {
 
+  const dispatch = useDispatch();
 
   const getStudent = useSelector((state) => state.getStudent);
   const listStudents = useSelector((state) => state.students) || [];
-  const dispatch = useDispatch();
+  const houses = useSelector((state) => state.houses);
 
   const [input, setInput] = useState('');
   const [btnOn, setBtnOn] = useState('');
 
   const student = listStudents.find((elm) => elm.name === getStudent) || '';
-
-  const dataHouse = DataHouses.find((elm) => elm.house === student.house) || '';
-
-  // const loadPoints = (chosenStudent) => {
-  //   if (input) {
-  //     dispatch(pointHouseThunks(student.house, Number(input)));
-  //     setInput('');
-  //     dispatch(HandleThunks(''));
-  //   }
-  // }
-
-  // getStudent && loadPoints(getStudent);
-  // console.log(getStudent);
+  const house = houses.find((elm) => elm.house === student.house) || '';
 
   const handValue = (e) => {
     setInput(e.target.value);
@@ -54,7 +42,7 @@ const Modal = () => {
   return (
     <div className='modal'>
       <div>
-        <img className='imgLogo' src={dataHouse.logo} alt={'logo'}></img>
+        <img className='imgLogo' src={house.logo} alt={'logo'}></img>
         <h2>{student.house}</h2>
         <h1>{student.name}</h1>
       </div>

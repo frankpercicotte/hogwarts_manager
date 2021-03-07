@@ -1,7 +1,8 @@
 import { loadStudentsThunks } from './store/modules/students/thunks';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
-import StudentsView from './components/studentsView';
+import Display from './components/Display';
+import StudentsView from './components/StudentsView';
 import Modal from './components/Modal';
 import './App.css';
 
@@ -10,7 +11,6 @@ function App() {
 
 
   const dispatch = useDispatch();
-  const houses = useSelector((state) => state.houses);
   const getStudent = useSelector((state) => state.getStudent);
 
 
@@ -35,10 +35,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         {getStudent && <Modal />}
-        <div>
-          {houses.map((elm, idx) => <div key={idx}> {elm.house} : {elm.points}</div>)}
-        </div>
-        <hr style={{ width: '60%' }}></hr>
+        <Display />
+        <hr style={{ width: '80%' }}></hr>
         <StudentsView />
 
       </header>
