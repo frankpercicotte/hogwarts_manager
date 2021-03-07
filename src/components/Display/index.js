@@ -9,7 +9,7 @@ const Display = () => {
     <div className='displayView'>
       {houses.sort((a, b) => b.points - a.points).map((elm, idx) =>
         <div className='cardsView' key={idx}>
-          <div>{elm.house}</div>
+          <div>#{idx + 1} {elm.house}</div>
           <img src={elm.logo} alt={'logo'} />
           <div>{elm.points}</div>
         </div>)}

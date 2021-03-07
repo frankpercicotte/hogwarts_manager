@@ -16,7 +16,7 @@ import '../../index.css'
 
 const useStyles = makeStyles({
   root: {
-    padding: '0',
+    padding: 0,
     margin: 0,
     width: '60%',
     minWidth: 300,
@@ -29,6 +29,10 @@ const useStyles = makeStyles({
     minWidth: 250,
     backgroundColor: '#C0CED0'
   },
+  title: {
+    fontWeight: 'bold',
+    color: 'purple',
+  }
 });
 
 
@@ -51,18 +55,17 @@ const StudentsView = () => {
   const rows = [...createData()]
 
   const showCardPoints = (chosenStudent) => {
-    // console.log('chosen at studentView:', chosenStudent);
     dispatch(HandleThunks(chosenStudent));
   }
 
   return (
     <TableContainer component={Paper} className={classes.root}>
       <Table className={classes.table} size="small" >
-        <TableHead>
+        <TableHead className={classes.title}>
           <TableRow>
             <TableCell align="center">Name</TableCell>
             <TableCell align="center">House</TableCell>
-            <TableCell align="center">-</TableCell>
+            <TableCell align="center"> </TableCell>
           </TableRow>
         </TableHead>
         <TableBody >

@@ -1,19 +1,28 @@
 .displayView {
   display: flex;
-  justify-content: space-around;
-  width: 85%;
-  font-size: 75%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 75%;
+  height: 90%;
+  font-size: 65%;
   color: black;
-  /* background-color: #e5edf2; */
+  background-color: #e5edf2;
   /* border: 2px solid red; */
 }
 
 .cardsView {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-direction: column;
   padding: 0 1%;
-  min-width: 15%;
-  /* border: 2px solid purple; */
+  width: 15%;
   background-color: #e5edf2;
+  border: 1px solid salmon;
+}
+
+.displayView img {
+  width: 60%;
+  height: 80%;
 }
