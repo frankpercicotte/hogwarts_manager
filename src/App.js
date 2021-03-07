@@ -34,7 +34,7 @@ function App() {
 
     <div className="App">
       <header className="App-header">
-        <Modal />
+        {getStudent && <Modal />}
         <div>
           {houses.map((elm, idx) => <div key={idx}> {elm.house} : {elm.points}</div>)}
         </div>

@@ -12,6 +12,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { HandleThunks } from '../../store/modules/handleScores/thunks'
 
 import annotations from '../../assets/annotations.svg'
+import '../../index.css'
 
 const useStyles = makeStyles({
   root: {

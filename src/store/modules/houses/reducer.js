@@ -1,10 +1,7 @@
-const houses = [
-  { house: 'Gryffindor', points: 0 },
-  { house: 'Slytherin', points: 0 },
-  { house: 'Hufflepuff', points: 0 },
-  { house: 'Ravenclaw', points: 0 }
-]
-const HouseReducer = (state = houses, action) => {
+
+import { DataHouses } from '../../../data/DataHouses'
+
+const HouseReducer = (state = DataHouses, action) => {
 
   switch (action.type) {
 

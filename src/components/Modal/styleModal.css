@@ -1,0 +1,118 @@
+.modal {
+  background-color: white;
+  display: inline-block;
+  position: fixed;
+  width: 335px;
+  height: 250px;
+  left: 2%;
+  right: 2%;
+  top: 30%;
+  color: #3461a4;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 47px;
+  background-color: #e5edf2;
+  border: 1px solid #3461a4;
+  border-radius: 5px;
+}
+
+.modal:hover {
+  border: 3px solid #3461a4;
+}
+
+.modal h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  text-align: center;
+  position: absolute;
+}
+
+.modal h1 {
+  width: 46%;
+  font-size: 70%;
+  left: 50%;
+  top: 18%;
+}
+
+.modal h2 {
+  font-size: 45%;
+  left: 68%;
+  top: 7%;
+}
+
+.modal h3 {
+  width: 50%;
+  left: 48%;
+  top: 55%;
+  font-size: 110%;
+}
+
+.modal h3[data-text="+"] {
+  color: #65e1cb;
+}
+
+.modal h3[data-text="-"] {
+  color: #f8a388;
+}
+
+.modal input {
+  position: absolute;
+  width: 40%;
+  left: 55%;
+  top: 53%;
+  font-size: 50%;
+  background: #ffffff;
+  border: 1px solid #5777a8;
+  box-sizing: border-box;
+}
+
+.modal button {
+  position: absolute;
+  width: 19%;
+  top: 70%;
+  font-size: 50%;
+  border-radius: 4px;
+  color: white;
+}
+
+.modal .btnGain {
+  left: 54%;
+  background: #65e1cb;
+}
+
+.modal .btnLose {
+  left: 77%;
+  background: #f8a388;
+}
+
+.modal .btnDone {
+  top: 80%;
+  left: 65%;
+  background: #6994d5;
+}
+
+.modal .imgStudent {
+  position: absolute;
+  width: 45%;
+  height: 89%;
+  left: 2%;
+  top: 5%;
+  background: #c4c4c4;
+}
+
+.imgStudent:hover {
+  border: 2px solid #3461a4;
+}
+
+.modal .imgLogo {
+  position: absolute;
+  width: 10%;
+  height: 13%;
+  left: 55%;
+  top: 5%;
+}
