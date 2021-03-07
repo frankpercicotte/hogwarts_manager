@@ -49,7 +49,7 @@ const Modal = () => {
       <div>
         {!btnOn ?
           <>
-            <input type='text' onChange={handValue} value={input} />
+            <input type='number' onChange={handValue} value={input} />
             <button className='btnGain' onClick={() => handleBtn('+')} >Gain</button>
             <button className='btnLose' onClick={() => handleBtn('-')}>Lose</button>
           </>
