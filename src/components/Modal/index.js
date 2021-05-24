@@ -28,7 +28,6 @@ const Modal = () => {
   }
 
   const handleDone = () => {
-
     let noteValue = Number(input);
     if (btnOn === '-') {
       noteValue *= -1;
