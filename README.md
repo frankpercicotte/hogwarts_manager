@@ -14,6 +14,10 @@ Opening the character's card, it shows the photo, name and house. and this is wh
 - axios
 - @ material-ui
 
+# you can view on vercel
+
+https://hogwarts-manager-six.vercel.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
